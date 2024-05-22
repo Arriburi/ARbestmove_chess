@@ -31,7 +31,7 @@ m_LocalPackages:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638459936360000000
+      ticks: 638520166231405348
     m_Hash: 2931547273
 m_ProjectPath: C:/Users/Luca/UnityProjects/ChessArrow/Packages
 m_EditorVersion: 2022.3.30f1 (70558241b701)
@@ -58,7 +58,13 @@ m_ResolvedPackages:
   status: 0
   errors: []
   versions:
-    all: []
+    all:
+    - 8.0.101
+    - 8.1.9
+    - 8.1.12
+    - 8.3.9
+    - 8.5.8
+    - 8.5.9
     compatible: []
     recommended: 
     deprecated: []
