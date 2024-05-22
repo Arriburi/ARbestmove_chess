@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "packages": {
+    "com.ptc.vuforia.engine": {
+      "tarball": {
+        "hash": "7cd44775a6dc",
+        "mtime": 1710396836000,
+        "size": 139976826,
+        "localPath": "C:\\Users\\Luca\\UnityProjects\\ChessArrow\\Packages\\com.ptc.vuforia.engine-10.22.5.tgz"
+      }
+    }
+  }
+}
