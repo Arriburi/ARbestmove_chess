@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Chessboard : MonoBehaviour{
 
+
     public int numOfSquares = 8;
 
     private float width;
@@ -18,8 +19,16 @@ public class Chessboard : MonoBehaviour{
         
     }
     void InitializeGrid(){
-        width = transform.localScale.x;
-        height = transform.localScale.z;
+
+        //this snippet under is new
+        /**/
+        Renderer plane = GetComponent<Renderer>();
+        Bounds bounds = plane.bounds;
+        width = bounds.size.x;
+        height = bounds.size.z;
+
+        //width = transform.localScale.x;
+        //height = transform.localScale.z;
 
         squareWidth = width/numOfSquares;
         squareHeight = height/numOfSquares;
@@ -46,8 +55,7 @@ public class Chessboard : MonoBehaviour{
             Gizmos.DrawLine(new Vector3(0, gizmoHeight, i * squareHeight), new Vector3(width, gizmoHeight, i * squareHeight));
         }
         
-        
-    // Draw a sphere at each grid center
+    //Drawsphere
     for (int x = 0; x < numOfSquares; x++)
     {
         for (int y = 0; y < numOfSquares; y++)
