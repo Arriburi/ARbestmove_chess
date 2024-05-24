@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Chessboard.cs" />
+    <Compile Include="Assets\Arrowhead.cs" />
     <Compile Include="Assets\DrawLine.cs" />
   </ItemGroup>
   <ItemGroup>
