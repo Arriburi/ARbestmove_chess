@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 
@@ -11,25 +12,37 @@ public class DrawLine : MonoBehaviour
     public Chessboard chessboard;
     public Vector2Int startGridPosition;
     public Vector2Int endGridPosition;
-
-    public LineRenderer lineRenderer;
+    public Transform arrowHead;
+    public LineRenderer line;
 
     void Start(){
 
-        lineRenderer = GetComponent<LineRenderer>();
-
         Vector3 startPoint = GetWorldPosition(startGridPosition);
         Vector3 endPoint = GetWorldPosition(endGridPosition);
+        
+        line.positionCount = 2;
+        line.SetPosition(0, startPoint);
+        line.SetPosition(1, endPoint);
+
+        Vector3 direction = startPoint-endPoint;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        arrowHead.rotation = rotation;
+        arrowHead.position = endPoint;
+
+        //arrowHead.positionCount = 2;
+        //arrowHead.SetPosition(1, endPoint);
+
+        //Vector3 middle = Vector3.Lerp(startPoint, endPoint, 0.7f);
+        //line.SetPosition(1, middle);
+       // arrowHead.SetPosition(0, middle);
 
 
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, startPoint);
-        lineRenderer.SetPosition(1, endPoint);
+
     }
     Vector3 GetWorldPosition(Vector2Int gridPos)
     {
         chessboard = FindObjectOfType<Chessboard>();
-        Vector2 localCoords = chessboard.GetLocalCoords(gridPos.x, gridPos.y);
+        Vector2 localCoords = chessboard.GetLocalCoords(gridPos.x, gridPos.y);        
         return new Vector3(localCoords.x, 0, localCoords.y); 
     }
     

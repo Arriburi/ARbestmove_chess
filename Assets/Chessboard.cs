@@ -12,8 +12,9 @@ public class Chessboard : MonoBehaviour{
     private float height;
     private float squareWidth;
     private float squareHeight;
+    public Transform plane;
     
-    void Start()
+    void Awake()
     {
         InitializeGrid();
         
@@ -21,14 +22,14 @@ public class Chessboard : MonoBehaviour{
     void InitializeGrid(){
 
         //this snippet under is new
-        /**/
+        
         Renderer plane = GetComponent<Renderer>();
         Bounds bounds = plane.bounds;
         width = bounds.size.x;
         height = bounds.size.z;
-
-        //width = transform.localScale.x;
-        //height = transform.localScale.z;
+        
+        //width = plane.localScale.x;
+        //height = plane.localScale.z;
 
         squareWidth = width/numOfSquares;
         squareHeight = height/numOfSquares;
@@ -36,8 +37,10 @@ public class Chessboard : MonoBehaviour{
     }
 
     public Vector2 GetLocalCoords(int x , int y){
-        float xLocal = (x + 0.5f) * squareWidth;
-        float yLocal = (y + 0.5f) * squareHeight;
+        Debug.Log(width);
+
+        float xLocal = x * squareWidth + squareWidth/2;
+        float yLocal = y * squareHeight + squareHeight/2;
 
         return new Vector2(xLocal, yLocal);
     }
