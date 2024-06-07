@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
-
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
 
 
 public class DrawLine : MonoBehaviour
@@ -34,7 +31,7 @@ public class DrawLine : MonoBehaviour
         Vector3 endPoint = GetWorldPosition(endGridPosition);
         Vector3 direction = (startPoint-endPoint).normalized;
 
-        Vector3 shortenedEndPoint = endPoint + (direction * centertobase);
+        Vector3 shortenedEndPoint = endPoint + (direction * centertobase); 
 
         arrowHead.rotation = Quaternion.LookRotation(-direction);
         arrowHead.position = shortenedEndPoint;
@@ -43,29 +40,19 @@ public class DrawLine : MonoBehaviour
         line.SetPosition(0, startPoint);
         line.SetPosition(1, shortenedEndPoint);
         
-        //arrowHead.positionCount = 2;
-        //arrowHead.SetPosition(1, endPoint);
-
-        //Vector3 middle = Vector3.Lerp(startPoint, endPoint, 0.7f);
-        //line.SetPosition(1, middle);
-       // arrowHead.SetPosition(0, middle);
-
-
 
     }
-    Vector3 GetWorldPosition(Vector2Int gridPos)
-    {
-        chessboard = FindObjectOfType<Chessboard>();
-        Vector2 localCoords = chessboard.GetLocalCoords(gridPos.x, gridPos.y);        
-        return new Vector3(localCoords.x, 0, localCoords.y); 
-    }
-    
+Vector3 GetWorldPosition(Vector2Int gridPos)
+{
+    Vector2 localCoords = chessboard.GetLocalCoords(gridPos.x, gridPos.y);
+    Vector3 offset = new Vector3(localCoords.x, 0, localCoords.y) - new Vector3(chessboard.chessboardA, 0, chessboard.chessboardB) / 2;
+    return chessboard.plane.position + offset;
+}
 
     void OnDrawGizmos(){
         //Vector3 offset = new Vector3(0.5f, 0f, 0.5f);
         //Vector3 adjustedStartPoint = startPoint + offset;
         //ector3 adjustedEndPoint = endPoint + offset;
-
         Gizmos.color = Color.blue;
         Vector3 startPoint = GetWorldPosition(startGridPosition);
         Vector3 endPoint = GetWorldPosition(endGridPosition);
