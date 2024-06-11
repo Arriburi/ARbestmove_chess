@@ -17,15 +17,18 @@ public class Chessboard : MonoBehaviour{
     public Transform target2;
 
     public Transform plane;
+    private Vector3 previousTarget1Position;
+    private Vector3 previousTarget2Position;
 
-    
-    void Awake()
+        void Start()
     {
         InitializeGrid();
-         OnDrawGizmos();
+
     }
     void InitializeGrid()
     {
+        Debug.Log("InitializeGrid called");
+
         Bounds bounds = new Bounds(target1.position, Vector3.zero);
         bounds.Encapsulate(target2.position);
         
@@ -40,8 +43,19 @@ public class Chessboard : MonoBehaviour{
         squareA = chessboardA/numOfSquares;
         squareB = chessboardB/numOfSquares;
 
+        previousTarget1Position = target1.position;
+        previousTarget2Position = target2.position;
+    }
 
-    }   
+    void Update()
+    {
+        if (target1.position != previousTarget1Position || target2.position != previousTarget2Position)
+        {
+            InitializeGrid();
+        }
+    }
+
+    
 
 
     public Vector2 GetLocalCoords(int x , int y){

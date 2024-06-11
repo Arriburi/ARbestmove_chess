@@ -1,0 +1,59 @@
+[33mcommit 538ba6c338ff84904c16fd375af836cfc337abd1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Fri Jun 7 19:59:07 2024 +0200
+
+    Restore to files to git from lfs
+
+[33mcommit c1749e27433103dc628ea580ab436f77c412016b[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Fri Jun 7 18:27:05 2024 +0200
+
+    Changed .gitignore
+
+[33mcommit 847f846e838dda81c8310dafa09d12fffbf818b3[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Fri May 24 22:38:52 2024 +0200
+
+    Arrow now correctly displaying tip to grid point, shortened line
+
+[33mcommit 6b4e13c63b54f4850a2c37d053f676fe073419a4[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Fri May 24 15:30:04 2024 +0200
+
+    Added ARROWHEAD as an image
+
+[33mcommit e90755df7509e3c3fa490c2883b92ce7d6fe9808[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Thu May 23 23:52:40 2024 +0200
+
+    Added Drawline on grid working properly
+
+[33mcommit 4decf77cd3911d1aba1c1beb92afd014e326d568[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Thu May 23 01:57:50 2024 +0200
+
+    fixing git lfs
+
+[33mcommit a4ba37875f51cbfb91cd90e6f91a7f27978feb24[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Thu May 23 01:57:47 2024 +0200
+
+    benis
+
+[33mcommit fdb451e9d6c4f67344d1ab916f393c4d2217f927[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Thu May 23 01:37:58 2024 +0200
+
+    Added large file tracking with git lfs
+
+[33mcommit 7937d6fe779aef46513d702ecc3d9f222928dc64[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Thu May 23 01:17:41 2024 +0200
+
+    Added also file tracking with git lfs
+
+[33mcommit e4dace6b57f7f9a0379da2273af46efa11595546[m
+Author: Arriburi <luca.arrighetti@gmail.com>
+Date:   Thu May 23 00:58:05 2024 +0200
+
+    Initial commit of AR project
